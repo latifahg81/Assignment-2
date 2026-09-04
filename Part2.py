@@ -1,4 +1,3 @@
-
 filename = input() #enter file name 
 
 if len(filename) < 1: #checks if anything was typed 
@@ -17,7 +16,7 @@ try:
         words = line.split() #splitting up the lines 
 
         for word in words: 
-            if word.endswith("umich.edu"): #checks if emails end with umich.edu, then writes into new file and starts a new line each time 
+            if "@" in word and word.endswith("umich.edu"): #checks if emails end with umich.edu, then writes into new file and starts a new line each time
                 umich_file.write(word + "\n")
                 count = count + 1 #counts the emails
 
