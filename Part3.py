@@ -1,12 +1,15 @@
 filename = input()
 
 if len(filename) < 1: 
-    filename = "Romeo-full.txt"
+    filename = "Romeo - full text.txt"
 
-    words [] #create empty list --> store the unique words 
+try:
+    file = open(filename)
+
+    words = [] #create empty list --> store the unique words 
 
     for line in file: #read each line
-        line_words = line.split() #break up lines into
+        line_words = line.split() #break up lines into words
 
         for word in line_words: #read each word by itself
             if word not in words: #checks if word is not in list
@@ -18,7 +21,9 @@ if len(filename) < 1:
 
     word_tuple = open("Shakespeare-Unique-Words-Tuple.txt","w")
     word_tuple.write(str(tuple(words))) #turns list into tuple and write it to second file
-    word.tuple.close() 
+    word_tuple.close()
 
-    except:
-        print("File not found")
+    file.close()
+
+except:
+    print("File not found")
